@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro Motero - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn active">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html" class="active">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <span style="color:#00f5d4; font-weight:800; font-size:0.9rem;">PILOTO: @carlos_99</span>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Foro de la <span>Comunidad</span></h2>
+            <p>Espacio libre para dudas mecánicas, recomendaciones de rutas y rodadas moteras.</p>
+        </div>
+
+        <div class="form-container" style="margin-bottom:2.5rem;">
+            <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1rem; color:var(--accent-red);">💬 PUBLICAR NUEVA PREGUNTA O TEMA</h3>
+            <form onsubmit="alert('¡Publicación enviada al foro comunidad!'); event.target.reset(); return false;">
+                <div class="form-group" style="margin-bottom:1rem;">
+                    <label>Título del Tema</label>
+                    <input type="text" required placeholder="Ej: ¿Qué aceite sintetico recomiendan para rodar en carretera caliente?">
+                </div>
+                <div class="form-group" style="margin-bottom:1.2rem;">
+                    <label>Mensaje o Detalles</label>
+                    <textarea rows="4" required placeholder="Describe tu duda o la información que quieras compartir..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Publicar en la Comunidad</button>
+            </form>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:1.2rem;">
+            <div class="card" style="flex-direction:column; align-items:flex-start;">
+                <div style="display:flex; justify-content:space-between; width:100%; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem;">
+                    <span style="color:var(--accent-red); font-weight:800;">@andres_angel</span>
+                    <span style="color:var(--text-gray); font-size:0.85rem;">Hace 15 minutos</span>
+                </div>
+                <h4 style="font-size:1.2rem; margin-top:0.8rem; color:var(--text-white);">¿Cada cuántos kilómetros le hacen cambio de aceite a una moto 300cc?</h4>
+                <p style="color:var(--text-gray); margin-top:0.4rem; font-size:0.95rem;">Estaba pensando en pasarme a semi-sintético pero no sé si rinda igual en ciudad con tráfico pesado.</p>
+                <div style="margin-top:1rem; display:flex; gap:15px; font-size:0.85rem; color:var(--text-muted);">
+                    <span>💬 8 Respuestas</span>
+                    <span>❤️ 14 Me Gusta</span>
+                </div>
+            </div>
+
+            <div class="card" style="flex-direction:column; align-items:flex-start;">
+                <div style="display:flex; justify-content:space-between; width:100%; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem;">
+                    <span style="color:var(--accent-red); font-weight:800;">@nicole_taborda</span>
+                    <span style="color:var(--text-gray); font-size:0.85rem;">Hace 2 horas</span>
+                </div>
+                <h4 style="font-size:1.2rem; margin-top:0.8rem; color:var(--text-white);">Rodada nocturna hacia el Oriente Antioqueño este Viernes 🚵🏻‍♂️</h4>
+                <p style="color:var(--text-gray); margin-top:0.4rem; font-size:0.95rem;">Nos vemos en la bomba de Terpel de San Diego a las 8:00 PM. Ritmo moderado, ¡todos bienvenidos!</p>
+                <div style="margin-top:1rem; display:flex; gap:15px; font-size:0.85rem; color:var(--text-muted);">
+                    <span>💬 23 Respuestas</span>
+                    <span>❤️ 45 Me Gusta</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Gastos - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn active">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html" class="active">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <span style="color:#00f5d4; font-weight:800; font-size:0.9rem;">PILOTO: @carlos_99</span>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Bitácora de <span>Gastos</span></h2>
+            <p>Control detallado de tanqueadas, repuestos e imprevistos de tus motocicletas.</p>
+        </div>
+
+        <!-- FORMULARIO DE REGISTRO NUEVO GASTO -->
+        <div class="form-container">
+            <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1.5rem; color:var(--accent-red);">⛽ REGISTRAR NUEVO GASTO</h3>
+            <form onsubmit="simularGuardarGasto(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Placa de la Moto</label>
+                        <input type="text" id="gasto-placa" required placeholder="Ej: ABC12D" maxlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Gasto (Texto Libre)</label>
+                        <input type="text" id="gasto-tipo" required placeholder="Ej: Tanqueo de gasolina corriente / Compra de guantes">
+                    </div>
+                    <div class="form-group">
+                        <label>Monto Gastado ($ COP)</label>
+                        <input type="number" id="gasto-monto" required placeholder="Ej: 25000">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" id="gasto-fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Kilometraje del Momento</label>
+                        <input type="number" id="gasto-km" required placeholder="Ej: 1550">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="padding:0.9rem 2rem;">Guardar Registro de Gasto</button>
+            </form>
+        </div>
+
+        <!-- REGISTROS HISTÓRICOS DE GASTOS CON CÓDIGO AUTOGENERADO -->
+        <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1.2rem;">📋 REGISTROS REALIZADOS</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código Gasto</th>
+                        <th>Placa</th>
+                        <th>Tipo de Gasto</th>
+                        <th>Monto Gastado</th>
+                        <th>Fecha</th>
+                        <th>Km Momento</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-gastos-body">
+                    <tr>
+                        <td><span class="badge-code">GST-1049</span></td>
+                        <td><strong>ABC12D</strong></td>
+                        <td>Tanqueo de gasolina corriente</td>
+                        <td style="color:#00f5d4; font-weight:bold;">$25,000</td>
+                        <td>2026-03-01</td>
+                        <td>1,550 km</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-code">GST-2210</span></td>
+                        <td><strong>XYZ34</strong></td>
+                        <td>Compra de casco LS2</td>
+                        <td style="color:#00f5d4; font-weight:bold;">$450,000</td>
+                        <td>2026-03-02</td>
+                        <td>3,250 km</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-code">GST-3891</span></td>
+                        <td><strong>MNO56F</strong></td>
+                        <td>Cambio de aceite de motor</td>
+                        <td style="color:#00f5d4; font-weight:bold;">$35,000</td>
+                        <td>2026-03-03</td>
+                        <td>650 km</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-code">GST-4102</span></td>
+                        <td><strong>PAS56</strong></td>
+                        <td>Compra de impermeable</td>
+                        <td style="color:#00f5d4; font-weight:bold;">$85,000</td>
+                        <td>2026-03-08</td>
+                        <td>6,200 km</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

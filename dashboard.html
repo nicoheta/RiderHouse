@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html" class="active">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <span style="color:#00f5d4; font-weight:800; font-size:0.9rem;">PILOTO: @carlos_99</span>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Panel de <span>Control</span></h2>
+            <p>Gestión de tus motocicletas registradas y alertas mecánicas en tiempo real.</p>
+        </div>
+
+        <!-- SECCIÓN DE ALERTAS PRINCIPALES -->
+        <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1rem; color:var(--text-white);">🚨 ALERTAS PREVENTIVAS Y DOCUMENTALES</h3>
+        <div class="grid-cards" style="margin-bottom:3rem;">
+            <div class="card alert-card warning">
+                <div class="card-icon">📄</div>
+                <div>
+                    <h4>SOAT (Placa: ABC12D)</h4>
+                    <p class="alert-status">VENCE EN 12 DÍAS</p>
+                    <span style="font-size:0.85rem; color:var(--text-gray);">Fecha Límite: 2027-01-10</span>
+                </div>
+            </div>
+            <div class="card alert-card danger">
+                <div class="card-icon">🛢️</div>
+                <div>
+                    <h4>CAMBIO DE ACEITE</h4>
+                    <p class="alert-status">¡MANTENIMIENTO VENCIDO!</p>
+                    <span style="font-size:0.85rem; color:var(--text-gray);">Superó los 2,500 km requeridos</span>
+                </div>
+            </div>
+            <div class="card alert-card success">
+                <div class="card-icon">🔧</div>
+                <div>
+                    <h4>TECNOMECÁNICA</h4>
+                    <p class="alert-status">DOCUMENTO VIGENTE</p>
+                    <span style="font-size:0.85rem; color:var(--text-gray);">Vence: 2027-11-15</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE MIS MOTOS Y REGISTRO DE NUEVA MOTO -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+            <h3 style="font-style:italic; text-transform:uppercase;">🏍️ MOTOCICLETAS REGISTRADAS</h3>
+        </div>
+
+        <div class="grid-cards" id="motos-container" style="margin-bottom:3rem;">
+            <div class="card">
+                <div class="moto-header">
+                    <div>
+                        <h3 style="font-size:1.3rem;">Yamaha FZ 25</h3>
+                        <p style="color:var(--text-gray); font-size:0.9rem; margin-top:0.2rem;">Color: Negro | 250 cc</p>
+                    </div>
+                    <span class="moto-tag">ABC12D</span>
+                </div>
+                <p>Odómetro Registrado: <strong style="color:var(--text-white);">1,550 km</strong></p>
+            </div>
+
+            <div class="card">
+                <div class="moto-header">
+                    <div>
+                        <h3 style="font-size:1.3rem;">KTM Duke 390</h3>
+                        <p style="color:var(--text-gray); font-size:0.9rem; margin-top:0.2rem;">Color: Naranja | 373 cc</p>
+                    </div>
+                    <span class="moto-tag">REW56</span>
+                </div>
+                <p>Odómetro Registrado: <strong style="color:var(--text-white);">600 km</strong></p>
+            </div>
+        </div>
+
+        <!-- FORMULARIO SEPARADO PARA REGISTRAR OTRA MOTO -->
+        <div class="form-container">
+            <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1.5rem; color:var(--accent-red);">+ REGISTRAR NUEVA MOTOCICLETA</h3>
+            <form onsubmit="simularRegistroMoto(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Placa de la Moto</label>
+                        <input type="text" id="moto-placa" required placeholder="Ej: ABC12D" maxlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label>Marca y Modelo</label>
+                        <input type="text" id="moto-modelo" required placeholder="Ej: Yamaha FZ 25">
+                    </div>
+                    <div class="form-group">
+                        <label>Cilindraje (cc)</label>
+                        <input type="number" id="moto-cc" required placeholder="Ej: 250">
+                    </div>
+                    <div class="form-group">
+                        <label>Kilometraje Actual</label>
+                        <input type="number" id="moto-km" required placeholder="Ej: 1550">
+                    </div>
+                    <div class="form-group">
+                        <label>Color</label>
+                        <input type="text" id="moto-color" required placeholder="Ej: Negro Mate">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="padding:0.9rem 2rem;">Guardar Motocicleta</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

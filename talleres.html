@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Talleres - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn active">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html" class="active">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <button onclick="openModal('login')" class="btn btn-outline">Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Directorio de <span>Talleres</span></h2>
+            <p>Red de talleres verificados y recomendados por la comunidad de motociclistas.</p>
+        </div>
+
+        <div class="grid-cards">
+            <!-- TALLER 1 -->
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                    <h3 style="font-size:1.2rem;">Taller El Templo del Motero</h3>
+                    <span style="background:#00f5d4; color:#0a0a0c; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem;">ACTIVO (Abierto)</span>
+                </div>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📍 Calle 38 Sur #43-20, Envigado</p>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📞 Teléfono: 3001234567</p>
+                <span class="badge" style="margin-top:1rem;">Especialidad: Motor e Inyección</span>
+            </div>
+
+            <!-- TALLER 2 -->
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                    <h3 style="font-size:1.2rem;">MotoServicios El Rápido</h3>
+                    <span style="background:#00f5d4; color:#0a0a0c; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem;">ACTIVO (Abierto)</span>
+                </div>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📍 Carrera 48 #10-12, Medellín</p>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📞 Teléfono: 3119876543</p>
+                <span class="badge" style="margin-top:1rem;">Especialidad: Frenos y Suspensión</span>
+            </div>
+
+            <!-- TALLER 3 -->
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                    <h3 style="font-size:1.2rem;">Centro de Servicio High Performance</h3>
+                    <span style="background:#00f5d4; color:#0a0a0c; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem;">ACTIVO (Abierto)</span>
+                </div>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📍 Avenida Las Palmas #15-30, Medellín</p>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📞 Teléfono: 3205559988</p>
+                <span class="badge" style="margin-top:1rem;">Especialidad: Alto Cilindraje</span>
+            </div>
+
+            <!-- TALLER 4 -->
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                    <h3 style="font-size:1.2rem;">ElectriMoto San Diego</h3>
+                    <span style="background:#ff1e27; color:white; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem;">INACTIVO (Cerrado)</span>
+                </div>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📍 Calle 33 #42-05, Medellín</p>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📞 Teléfono: 3154442211</p>
+                <span class="badge" style="margin-top:1rem;">Especialidad: Sistema Eléctrico</span>
+            </div>
+
+            <!-- TALLER 5 -->
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                    <h3 style="font-size:1.2rem;">Mecánica y Repuestos Sabaneta</h3>
+                    <span style="background:#00f5d4; color:#0a0a0c; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem;">ACTIVO (Abierto)</span>
+                </div>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📍 Carrera 45 #68 Sur-12, Sabaneta</p>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📞 Teléfono: 3017778899</p>
+                <span class="badge" style="margin-top:1rem;">Especialidad: Transmisión y Cadenas</span>
+            </div>
+
+            <!-- TALLER 6 -->
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+                    <h3 style="font-size:1.2rem;">Doctor Moto Itagüí</h3>
+                    <span style="background:#00f5d4; color:#0a0a0c; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem;">ACTIVO (Abierto)</span>
+                </div>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📍 Calle 50 #52-18, Itagüí</p>
+                <p style="color:var(--text-gray); font-size:0.9rem;">📞 Teléfono: 3123334455</p>
+                <span class="badge" style="margin-top:1rem;">Especialidad: Diagnóstico Computarizado</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

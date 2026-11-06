@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Fallas - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html" class="active">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <button onclick="openModal('login')" class="btn btn-outline">Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Asistente de <span>Diagnóstico</span></h2>
+            <p>Selecciona la falla de tu moto y conéctate instantáneamente con el taller especializado indicado.</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="search-sintoma" onkeyup="filtrarSintomas()" placeholder="🔍 Busca por síntoma (ej: chispa, frenos, humo, fuga, cadena, batería)...">
+        </div>
+
+        <div class="grid-cards">
+            <!-- FALLA 1 -->
+            <a href="talleres.html?esp=Electrico" class="card sintoma-card" data-nombre="no prende chispa motor electrico bateria" style="text-decoration:none; color:inherit;">
+                <div class="card-icon">⚡</div>
+                <h3 style="font-size:1.2rem; color:var(--text-white);">La moto no da encendido ni chispa</h3>
+                <span class="badge" style="margin:0.5rem 0;">Categoría: Eléctrico</span>
+                <p style="color:var(--text-gray); font-size:0.9rem;">Posibles causas: Batería descargada, bujía sulfatada o fusible principal quemado.</p>
+                <button class="btn btn-outline" style="margin-top:1rem; font-size:0.75rem;">Ver Talleres Eléctricos →</button>
+            </a>
+
+            <!-- FALLA 2 -->
+            <a href="talleres.html?esp=Motor" class="card sintoma-card" data-nombre="humo blanco azul escape motor humo" style="text-decoration:none; color:inherit;">
+                <div class="card-icon">💨</div>
+                <h3 style="font-size:1.2rem; color:var(--text-white);">Humo blanco/azul saliendo del escape</h3>
+                <span class="badge" style="margin:0.5rem 0;">Categoría: Motor</span>
+                <p style="color:var(--text-gray); font-size:0.9rem;">Posibles causas: Desgaste en anillos del pistón o sellos de válvula pasando aceite.</p>
+                <button class="btn btn-outline" style="margin-top:1rem; font-size:0.75rem;">Ver Talleres de Motor →</button>
+            </a>
+
+            <!-- FALLA 3 -->
+            <a href="talleres.html?esp=Frenos" class="card sintoma-card" data-nombre="frenos chirrido pedal largo freno manigueta" style="text-decoration:none; color:inherit;">
+                <div class="card-icon">🛑</div>
+                <h3 style="font-size:1.2rem; color:var(--text-white);">Chirrido metálico al frenar o pedal largo</h3>
+                <span class="badge" style="margin:0.5rem 0;">Categoría: Frenos</span>
+                <p style="color:var(--text-gray); font-size:0.9rem;">Posibles causas: Pastillas cristalizadas o aire en el sistema hidráulico de frenos.</p>
+                <button class="btn btn-outline" style="margin-top:1rem; font-size:0.75rem;">Ver Talleres de Frenos →</button>
+            </a>
+
+            <!-- FALLA 4 -->
+            <a href="talleres.html?esp=Transmision" class="card sintoma-card" data-nombre="tirones cadena kit arrastre sonido marcha" style="text-decoration:none; color:inherit;">
+                <div class="card-icon">⚙️</div>
+                <h3 style="font-size:1.2rem; color:var(--text-white);">Tirones en marcha o golpeteo en la cadena</h3>
+                <span class="badge" style="margin:0.5rem 0;">Categoría: Transmisión</span>
+                <p style="color:var(--text-gray); font-size:0.9rem;">Posibles causas: Cadena destensada, desalineada o kit de arrastre desgastado.</p>
+                <button class="btn btn-outline" style="margin-top:1rem; font-size:0.75rem;">Ver Talleres de Transmisión →</button>
+            </a>
+
+            <!-- FALLA 5 -->
+            <a href="talleres.html?esp=Inyeccion" class="card sintoma-card" data-nombre="se apaga minimo acelerador inyeccion carburador" style="text-decoration:none; color:inherit;">
+                <div class="card-icon">⛽</div>
+                <h3 style="font-size:1.2rem; color:var(--text-white);">Se apaga al quedar en mínimo o al acelerar</h3>
+                <span class="badge" style="margin:0.5rem 0;">Categoría: Inyección / Carburación</span>
+                <p style="color:var(--text-gray); font-size:0.9rem;">Posibles causas: Inyector sucio, filtro de aire obstruido o entrada de aire falsa.</p>
+                <button class="btn btn-outline" style="margin-top:1rem; font-size:0.75rem;">Ver Especialistas en Inyección →</button>
+            </a>
+
+            <!-- FALLA 6 -->
+            <a href="talleres.html?esp=Suspension" class="card sintoma-card" data-nombre="fuga aceite barras delanteras suspension golpe" style="text-decoration:none; color:inherit;">
+                <div class="card-icon">🛵</div>
+                <h3 style="font-size:1.2rem; color:var(--text-white);">Fuga de aceite en barras delanteras o inestabilidad</h3>
+                <span class="badge" style="margin:0.5rem 0;">Categoría: Suspensión</span>
+                <p style="color:var(--text-gray); font-size:0.9rem;">Posibles causas: Retenedores de suspensión reventados o bajo nivel de líquido hidráulico.</p>
+                <button class="btn btn-outline" style="margin-top:1rem; font-size:0.75rem;">Ver Talleres de Suspensión →</button>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

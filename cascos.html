@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Cascos - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html" class="active">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <button onclick="openModal('login')" class="btn btn-outline">Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Asistente de <span>Recomendación de Cascos</span></h2>
+            <p>Selecciona el tipo de casco que más te llama la atención según tu estilo de conducción:</p>
+        </div>
+
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab('urbano')">1. Uso Urbano y Diario</button>
+            <button class="tab-btn" onclick="switchTab('deportivo')">2. Deportivo y Pista</button>
+            <button class="tab-btn" onclick="switchTab('vintage')">3. Vintage y Custom</button>
+            <button class="tab-btn" onclick="switchTab('adventure')">4. Adventure y Trail</button>
+        </div>
+
+        <!-- OPCIÓN 1: URBANO Y DIARIO -->
+        <div id="urbano" class="tab-content active">
+            <h3 style="color:var(--accent-red); font-style:italic; margin-bottom:1.5rem; text-transform:uppercase;">NUESTRAS RECOMENDACIONES PARA USO URBANO Y DIARIO</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">1. Shoei Neotec 3</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Un modelo abatible de alta gama con excelente aislamiento acústico y visor solar integrado.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">2. HJC i90</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Opción modular de precio medio, cómodo para usar con gafas y listo para sistemas de comunicación bluetooth.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">3. LS2 Strobe II</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Casco modular económico con certificación de seguridad actualizada, ideal para presupuestos ajustados en ciudad.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPCIÓN 2: DEPORTIVO Y PISTA -->
+        <div id="deportivo" class="tab-content">
+            <h3 style="color:var(--accent-red); font-style:italic; margin-bottom:1.5rem; text-transform:uppercase;">NUESTRAS RECOMENDACIONES PARA DEPORTIVO Y PISTA</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">1. Shoei X-Fifteen</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> El estándar de oro en la pista, usado en MotoGP, con un coeficiente aerodinámico sobresaliente.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">2. AGV K6 S</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Extremadamente ligero gracias a su calota de fibra de carbono y aramida, con un diseño italiano muy afilado.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">3. Scorpion EXO-R1 EVO Air</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Excelente balance calidad-precio en el segmento deportivo, incluye almohadillas inflables para un ajuste milimétrico.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPCIÓN 3: VINTAGE Y CUSTOM -->
+        <div id="vintage" class="tab-content">
+            <h3 style="color:var(--accent-red); font-style:italic; margin-bottom:1.5rem; text-transform:uppercase;">NUESTRAS RECOMENDACIONES PARA VINTAGE Y CUSTOM</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">1. Bell Bullitt</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> El referente definitivo de estética retro integral, con un campo de visión gigantesco y acabados de cuero en el interior.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">2. Shoei Glamster</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Ofrece un diseño limpio y clásico sin comprometer la comodidad y la seguridad de un casco moderno de gama alta.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">3. Biltwell Gringo S ECE</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Opción clásica de perfil bajo, muy popular en la cultura custom por sus colores y sencillez.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPCIÓN 4: ADVENTURE Y TRAIL -->
+        <div id="adventure" class="tab-content">
+            <h3 style="color:var(--accent-red); font-style:italic; margin-bottom:1.5rem; text-transform:uppercase;">NUESTRAS RECOMENDACIONES PARA ADVENTURE Y TRAIL</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">1. Arai Tour-X5</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> El modelo premium por excelencia para aventura, súper versátil ya que permite desmontar la visera o la pantalla fácilmente.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">2. Shoei Hornet X2</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Diseñado para largos viajes mixtos, mantiene una gran estabilidad en autopista a pesar de tener visera off-road.</p>
+                </div>
+                <div class="card">
+                    <h4 style="font-size:1.3rem; color:var(--text-white); margin-bottom:0.5rem;">3. Bell MX-9 Adventure MIPS</h4>
+                    <p style="color:var(--text-gray);"><strong>Características:</strong> Una alternativa intermedia muy segura gracias a la tecnología de protección contra impactos rotacionales MIPS.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiderHouse - El Hogar del Motociclista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="auth-buttons">
+            <button onclick="openModal('login')" class="btn btn-outline">Iniciar Sesión</button>
+            <button onclick="openModal('register')" class="btn btn-primary">Registrarse</button>
+        </div>
+    </header>
+
+    <!-- HERO CAROUSEL -->
+    <section class="hero-carousel-container">
+        <div class="carousel">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: linear-gradient(rgba(10,10,12,0.75), rgba(10,10,12,0.95)), url('img/principal.jpg');">
+                <div class="hero-content">
+                    <span class="badge">Gestión Integral Inteligente</span>
+                    <h1>YOUR RIDE. <span>YOUR WORLD.</span></h1>
+                    <p>Controla tus gastos de combustible, kilometraje en tiempo real y recibe alertas preventivas antes de que se venza tu SOAT o Tecnomecánica.</p>
+                    <div class="hero-actions">
+                        <button onclick="openModal('register')" class="btn btn-primary">Crear Cuenta Gratis</button>
+                        <a href="asistente.html" class="btn btn-secondary">🚨 Botón de Emergencia</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: linear-gradient(rgba(10,10,12,0.75), rgba(10,10,12,0.95)), url('img/rodada.jpg');">
+                <div class="hero-content">
+                    <span class="badge">Próximo Evento Motero</span>
+                    <h1>RODADA <span>MEDELLÍN 2027</span></h1>
+                    <p>Únete a la comunidad de RiderHouse en nuestra próxima gran rodada nocturna por el Valle de Aburrá. ¡Conoce la ruta y confirma tu asistencia!</p>
+                    <div class="hero-actions">
+                        <a href="foro.html" class="btn btn-primary">Ver Detalles en el Foro</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: linear-gradient(rgba(10,10,12,0.75), rgba(10,10,12,0.95)), url('img/taller.jpg');">
+                <div class="hero-content">
+                    <span class="badge">Asistente Técnico Especializado</span>
+                    <h1>TALLERES <span>CERCA DE TI</span></h1>
+                    <p>¿Tuviste un varado en ruta? Identifica la falla según los síntomas de tu moto y encuentra el taller especializado abierto más cercano.</p>
+                    <div class="hero-actions">
+                        <a href="talleres.html" class="btn btn-primary">Buscar Talleres</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        
+        <div class="carousel-dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
+            <span class="dot" onclick="setSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS PRINCIPALES -->
+    <section class="container section-space">
+        <div class="section-title">
+            <h2>Todo lo que tu moto <span>necesita</span></h2>
+            <p>Una plataforma potente concebida para el uso diario en smartphones y computadores.</p>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-icon">⛽</div>
+                <h3>Control de Gastos</h3>
+                <p style="color:var(--text-gray); margin-top:0.5rem;">Lleva la bitácora exacta de tus tanqueadas, accesorios y peajes para no perder el control de tu presupuesto.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛎️</div>
+                <h3>Alertas Inteligentes</h3>
+                <p style="color:var(--text-gray); margin-top:0.5rem;">Notificaciones preventivas sobre fechas de vencimiento de tu SOAT, Tecnomecánica y cambio de aceite.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛠️</div>
+                <h3>Asistente de Fallas</h3>
+                <p style="color:var(--text-gray); margin-top:0.5rem;">Diagnóstico rápido según lo que sientas en la moto y direccionamiento inmediato a talleres aliados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE RIDERHOUSE -->
+    <section class="container section-space about-section">
+        <div class="section-title">
+            <h2><span>RIDERHOUSE:</span> El hogar digital del motociclista</h2>
+        </div>
+
+        <div class="about-content">
+            <p>En <strong>RiderHouse</strong>, impulsamos la pasión por las dos ruedas transformando la forma en que los motociclistas gestionan y cuidan sus vehículos. Nacemos como una plataforma integral pensada por y para moteros, ofreciendo un control total sobre la vida útil de cada moto en una interfaz moderna, intuitiva y rápida.</p>
+
+            <h3>Nuestra Misión</h3>
+            <blockquote>Brindar a la comunidad de motociclistas una plataforma digital centralizada, intuitiva y accesible 24/7 que facilite la gestión integral de sus vehículos controlando gastos, mantenimientos, alertas documentales y ofreciendo una red de apoyo técnico y comunitario para promover una movilidad más segura, organizada, informada y conectada.</blockquote>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="container section-space faq-section">
+        <div class="section-title">
+            <h2>Preguntas <span>frecuentes</span></h2>
+            <p>Resolvemos algunas dudas sobre RiderHouse.</p>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>¿Mis datos personales y la información de mi moto van a estar seguros?</summary>
+                <p>La plataforma cuenta con una arquitectura de base de datos relacional robusta y protocolos de acceso seguros mediante usuario y contraseña, garantizando que la información del vehículo, documentos y datos de contacto sean privados y de uso exclusivo del propietario.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Es una aplicación pesada que tengo que descargar u ocupa memoria en mi celular?</summary>
+                <p>No requiere descargas pesadas en tiendas de aplicaciones. Al ser un desarrollo web optimizado (responsive), se puede acceder de forma rápida y directa desde el navegador del celular o computador, funcionando como una aplicación web ligera.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Es una plataforma gratuita o tiene algún costo oculto?</summary>
+                <p>Está concebida como una herramienta accesible y de uso libre para la comunidad motera, diseñada inicialmente para centralizar la gestión personal del vehículo sin barreras económicas.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Es difícil de configurar o toma mucho tiempo registrar los mantenimientos?</summary>
+                <p>El sistema cuenta con interfaces intuitivas, formularios rápidos y un menú estructurado paso a paso. Registrar una tanqueada de gasolina o un mantenimiento toma menos de un minuto, facilitando que el usuario mantenga su bitácora al día sin pereza.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- MODAL DE AUTENTICACIÓN -->
+    <div id="modal-auth" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <!-- VISTA INICIAR SESIÓN -->
+            <div id="form-login-view">
+                <h3 style="font-size:1.6rem; font-style:italic; margin-bottom:1.5rem;">INICIAR <span>SESIÓN</span></h3>
+                <form onsubmit="simularLogin(event)">
+                    <div class="form-group" style="margin-bottom:1.2rem;">
+                        <label>Nombre de Usuario</label>
+                        <input type="text" id="login-user" required placeholder="Ej: carlos_99">
+                    </div>
+                    <div class="form-group" style="margin-bottom:1.8rem;">
+                        <label>Contraseña</label>
+                        <input type="password" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                </form>
+            </div>
+
+            <!-- VISTA REGISTRO DE USUARIO -->
+            <div id="form-register-view" style="display:none;">
+                <h3 style="font-size:1.6rem; font-style:italic; margin-bottom:1.5rem;">REGISTRO DE <span>USUARIO</span></h3>
+                <form onsubmit="simularRegistroUsuario(event)">
+                    <div class="form-group" style="margin-bottom:1rem;">
+                        <label>Nombre de Usuario (Único)</label>
+                        <input type="text" id="reg-username" required placeholder="Ej: nicole_taborda">
+                    </div>
+                    <div class="form-grid" style="margin-bottom:0.5rem;">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" id="reg-nombre" required placeholder="Nicole">
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido</label>
+                            <input type="text" required placeholder="Hernández">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:1rem;">
+                        <label>Correo Electrónico</label>
+                        <input type="email" required placeholder="nicole@outlook.com">
+                    </div>
+                    <div class="form-grid" style="margin-bottom:0.5rem;">
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" required placeholder="3045331096">
+                        </div>
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" required placeholder="Calle 36 Sur #43">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top:1rem;">Crear mi Cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="logo-text" style="margin-bottom:1rem;">RIDER<span>HOUSE</span></h3>
+                <p>El portal web definitivo de gestión para el motociclista. Proyecto integrador CESDE 2026.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="index.html">Inicio</a>
+                <a href="dashboard.html">Mi Panel</a>
+                <a href="gastos.html">Gastos</a>
+                <a href="mantenimientos.html">Mantenimientos</a>
+            </div>
+            <div class="footer-col">
+                <h4>Herramientas</h4>
+                <a href="asistente.html">Asistente de Fallas</a>
+                <a href="talleres.html">Directorio de Talleres</a>
+                <a href="cascos.html">Recomendador de Cascos</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>¿Necesitas ayuda o tienes una inquietud sobre RiderHouse? Escríbenos.</p>
+                <a href="mailto:riderhouseclub@gmail.com?subject=Ayuda%20o%20inquietud%20sobre%20RiderHouse&body=Hola%2C%20necesito%20ayuda%20o%20tengo%20una%20inquietud%20sobre%20RiderHouse.">Correo: riderhouseclub@gmail.com</a>
+                <a href="https://wa.me/573045331096?text=Hola%2C%20necesito%20ayuda%20o%20tengo%20una%20inquietud%20sobre%20RiderHouse." target="_blank" rel="noopener noreferrer">WhatsApp: +57 304 533 1096</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Creado por Nicole Hernández, Andrés Angel, Andrés Lopez y Kevin Castaño.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

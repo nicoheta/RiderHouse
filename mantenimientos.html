@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimientos - RiderHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <img src="img/logo.png" alt="RiderHouse Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/42x42/ff1e27/FFFFFF?text=RH'">
+            <span class="logo-text">RIDER<span>HOUSE</span></span>
+        </a>
+        <button class="mobile-nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        <nav class="nav-links" id="primary-navigation">
+            <a href="index.html">Inicio</a>
+            <a href="asistente.html">Asistente Fallas</a>
+            <a href="cascos.html">🪖 Guía de Cascos</a>
+            <a href="dashboard.html">Mi Panel</a>
+            <div class="dropdown">
+                <button class="dropdown-btn active">Más ▾</button>
+                <div class="dropdown-menu">
+                    <a href="gastos.html">Gastos</a>
+                    <a href="mantenimientos.html" class="active">Mantenimientos</a>
+                    <a href="talleres.html">Talleres</a>
+                    <a href="foro.html">Foro</a>
+                </div>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <span style="color:#00f5d4; font-weight:800; font-size:0.9rem;">PILOTO: @carlos_99</span>
+        </div>
+    </header>
+
+    <main class="container section-space">
+        <div class="section-title">
+            <h2>Historial de <span>Mantenimiento</span></h2>
+            <p>Control técnico preventivo y correctivo para prolongar la vida de tu motor.</p>
+        </div>
+
+        <!-- FORMULARIO DE REGISTRO NUEVO MANTENIMIENTO -->
+        <div class="form-container">
+            <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1.5rem; color:var(--accent-red);">🛠️ REGISTRAR NUEVO MANTENIMIENTO</h3>
+            <form onsubmit="simularGuardarMantenimiento(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Placa de la Moto</label>
+                        <input type="text" id="mant-placa" required placeholder="Ej: PAS56" maxlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label>Kilometraje</label>
+                        <input type="number" id="mant-km" required placeholder="Ej: 8500">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" id="mant-fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Costo del Servicio ($ COP)</label>
+                        <input type="number" id="mant-costo" required placeholder="Ej: 140000">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary" style="padding:0.9rem 2rem;">Guardar Registro Técnico</button>
+            </form>
+        </div>
+
+        <!-- REGISTROS HISTÓRICOS DE MANTENIMIENTO CON CÓDIGO AUTOGENERADO -->
+        <h3 style="font-style:italic; text-transform:uppercase; margin-bottom:1.2rem;">📋 MANTENIMIENTOS ALMACENADOS</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código Mantenimiento</th>
+                        <th>Placa</th>
+                        <th>Km Mantenimiento</th>
+                        <th>Fecha Mantenimiento</th>
+                        <th>Costo del Servicio</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-mant-body">
+                    <tr>
+                        <td><span class="badge-code">MNT-8812</span></td>
+                        <td><strong>PAS56</strong></td>
+                        <td>6,500 km</td>
+                        <td>2026-03-15</td>
+                        <td style="color:var(--accent-red); font-weight:bold;">$120,000</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-code">MNT-9041</span></td>
+                        <td><strong>PAS56</strong></td>
+                        <td>8,500 km</td>
+                        <td>2026-05-10</td>
+                        <td style="color:var(--accent-red); font-weight:bold;">$140,000</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-code">MNT-3310</span></td>
+                        <td><strong>HJK90</strong></td>
+                        <td>9,700 km</td>
+                        <td>2026-03-18</td>
+                        <td style="color:var(--accent-red); font-weight:bold;">$110,000</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-code">MNT-1290</span></td>
+                        <td><strong>ZXC12V</strong></td>
+                        <td>7,400 km</td>
+                        <td>2026-03-22</td>
+                        <td style="color:var(--accent-red); font-weight:bold;">$115,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 RiderHouse. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
